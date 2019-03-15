@@ -7,7 +7,7 @@ var ReviewSchema= new Schema({
     required:true
   },
   text:{
-    text:String,
+    type:String,
   },
   foodtruck:{
     type:Schema.Types.ObjectId,
