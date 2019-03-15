@@ -49,6 +49,9 @@ api.put("/:id",authenticate,(req,res)=>{
     if (err) {
       res.send(err);
     }
+    if(foodtruck==null){
+      res.status(404).send("FoodTruck Not Found");
+    }
     foodtruck.name=req.body.name;
     foodtruck.foodtype=req.body.foodtype;
     foodtruck.avgcost=req.body.avgcost;
