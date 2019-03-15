@@ -31,5 +31,5 @@ passport.deserializeUser(Account.deserializeUser());
 
 //api routes
 app.use('/api/v1',routes);
-app.server.listen(config.port);
+app.server.listen(process.env.PORT || 5000);
 module.exports=app;
