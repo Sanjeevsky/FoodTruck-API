@@ -1,9 +1,9 @@
 const mongoose =require('mongoose');
 const {Router} =require('express');
-const FoodTruck =require('../model/foodtruck');
+var FoodTruck =require('../model/foodtruck');
 const bodyParser =require('body-parser');
 const {authenticate} =require('../middleware/authmiddleware');
-const Review =require("../model/review");
+var Review =require("../model/review");
 
 module.exports= ({config,db})=>{
   var api=Router();
@@ -52,7 +52,7 @@ api.put("/:id",authenticate,(req,res)=>{
     if(foodtruck==null){
       res.status(404).send("FoodTruck Not Found");
     }
-    //foodtruck.name=req.body.name;
+    foodtruck.name=req.body.name;
     foodtruck.foodtype=req.body.foodtype;
     foodtruck.avgcost=req.body.avgcost;
     foodtruck.geometry.coordinates=req.body.geometry.coordinates;

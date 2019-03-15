@@ -1,5 +1,5 @@
 const mongoose =require('mongoose');
-const Review =require('./review');
+var Review =require('./review');
 
  var Schema=mongoose.Schema;
  var foodtruckSchema=new Schema({

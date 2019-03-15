@@ -2,8 +2,8 @@ const express =require('express');
 const config =require('../config');
 const middleware =require('../middleware');
 var initalizeDb =require("../db");
-const foodtruck =require('../controller/foodtruck');
-const account =require('../controller/account');
+var foodtruck =require('../controller/foodtruck');
+var account =require('../controller/account');
 
 var router=express();
 
