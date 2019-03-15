@@ -3,6 +3,11 @@ const config =require('./config');
 mongoose.Promise=global.Promise;
 module.exports=function(callback){
 
-  var db=mongoose.connect(process.env.MONGODB_URI);
+  var db=mongoose.connect(config.mongoUrl, { useNewUrlParser: true }).then(() => {
+console.log("Connected to Database");
+}).catch((err) => {
+    console.log("Not Connected to Database ERROR! ", err);
+});
+mongoose.set('useCreateIndex', true);
   callback(db);
 }
